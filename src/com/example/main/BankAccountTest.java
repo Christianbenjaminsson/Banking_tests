@@ -4,6 +4,8 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class BankAccountTest {
 
+    BankAccount account;
+
     @org.junit.jupiter.api.Test
     public void deposit() {
         BankAccount account = new BankAccount("Tim", "Buchalka", 1000.00, BankAccount.CHECKING);
@@ -12,10 +14,18 @@ class BankAccountTest {
     }
 
     @org.junit.jupiter.api.Test
-    public void withDraw() {
-        BankAccount account = new BankAccount("Andrew", "Buchalka", 500.00, BankAccount.CHECKING);
-        account.withDraw(200.00, true);
-        assertEquals(300.00, account.getBalance(), 0);
+    public void withDraw_branch() {
+        double balance = account.withDraw(600.00, true);
+        assertEquals(400.00, balance, 0);
+        //BankAccount account = new BankAccount("Andrew", "Buchalka", 500.00, BankAccount.CHECKING);
+        //account.withDraw(200.00, true);
+        //assertEquals(300.00, account.getBalance(), 0);
+    }
+
+    @org.junit.Test
+    public void withDrawl_notBranch() {
+        System.out.println("Start write code here");
+
     }
 
     @org.junit.jupiter.api.Test
