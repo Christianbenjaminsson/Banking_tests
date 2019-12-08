@@ -22,10 +22,10 @@ class BankAccountTest {
         //assertEquals(300.00, account.getBalance(), 0);
     }
 
-    @org.junit.Test
-    public void withDrawl_notBranch() {
-        System.out.println("Start write code here");
-
+    @org.junit.jupiter.api.Test
+    public void withDraw_notBranch() {
+        double balance = account.withDraw(600.00, false);
+        assertEquals(400.00, balance, 0);
     }
 
     @org.junit.jupiter.api.Test
@@ -47,5 +47,4 @@ class BankAccountTest {
         BankAccount account = new BankAccount("Tim", "Buchalka", 1000.00, BankAccount.CHECKING);
         assertTrue(account.isChecking(), "The account is NOT a checking account");
     }
-
 }
